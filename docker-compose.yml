@@ -1,0 +1,51 @@
+version: '3.4'
+
+services:
+  techdemo.auth.api:
+    image: ${DOCKER_REGISTRY-}techdemoauth
+    build:
+      context: .
+      dockerfile: TechDemo.Auth.API/Dockerfile
+    environment:
+      - CONTAINER=true
+    links:
+      - "techdemo.postgres.auth"
+    depends_on:
+      - "techdemo.postgres.auth"
+
+
+  techdemo.todo.api:
+    image: ${DOCKER_REGISTRY-}techdemotodo
+    build:
+      context: .
+      dockerfile: TechDemo.Todo.API/Dockerfile
+    environment:
+      - CONTAINER=true
+    links:
+      - "techdemo.postgres"
+    depends_on:
+      - "techdemo.postgres"
+
+
+  techdemo.postgres:
+    image: postgres
+    restart: always
+    ports:
+       - 5432:5432
+    environment:
+       POSTGRES_USER: "techdemosuper"
+       POSTGRES_PASSWORD: "techdemo1234"
+       POSTGRES_DB: "techdemo"
+
+  techdemo.postgres.auth:
+    image: postgres
+    restart: always
+    ports:
+       - 5433:5432
+    environment:
+       POSTGRES_USER: "techdemosuper"
+       POSTGRES_PASSWORD: "techdemo1234"
+       POSTGRES_DB: "techdemo"
+
+
+   
