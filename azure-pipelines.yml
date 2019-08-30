@@ -37,7 +37,6 @@ stages:
         projectName: $(Build.Repository.Name)
         qualifyImageNames: true
         buildImages: true
-        abortOnContainerExit: true
         detached: false
     - task: DotNetCoreCLI@2
       displayName: Testing
