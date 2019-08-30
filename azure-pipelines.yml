@@ -28,12 +28,6 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Build services'
         includeLatestTag: true
-
-  - job: Test
-    displayName: Testing
-    pool:
-      vmImage: 'vs2017-win2016'
-    steps:
     - task: VisualStudioTestPlatformInstaller@1
       displayName: Installing test platform
       inputs:
@@ -47,12 +41,6 @@ stages:
           !**\*TestAdapter.dll
           !**\obj\**
         searchFolder: '$(System.DefaultWorkingDirectory)'
-  
-  - job: Push
-    displayName: Pushing image
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
     - task: DockerCompose@0
       displayName: Push services
       inputs:
