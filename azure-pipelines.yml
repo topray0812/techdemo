@@ -28,6 +28,14 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Build services'
         includeLatestTag: true
+    - task: VSTest@2
+      inputs:
+        testSelector: 'testAssemblies'
+        testAssemblyVer2: |
+          **\*test*.dll
+          !**\*TestAdapter.dll
+          !**\obj\**
+        searchFolder: '$(System.DefaultWorkingDirectory)'
     - task: DockerCompose@0
       displayName: Push services
       inputs:
