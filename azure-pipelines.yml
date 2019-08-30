@@ -28,3 +28,13 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Build services'
         includeLatestTag: true
+    - task: DockerCompose@0
+      displayName: Push services
+      inputs:
+        action: Push services
+        azureSubscription: 'Free Trial(56257611-1494-4790-a465-f4ced4782366)'
+        azureContainerRegistry: '{"loginServer":"techdemoacr.azurecr.io", "id" : "/subscriptions/56257611-1494-4790-a465-f4ced4782366/resourceGroups/techdemo/providers/Microsoft.ContainerRegistry/registries/techdemoacr"}'
+        dockerComposeFile: '**/docker-compose.yml'
+        projectName: $(Build.Repository.Name)
+        qualifyImageNames: true
+        additionalImageTags: $(Build.BuildId)
