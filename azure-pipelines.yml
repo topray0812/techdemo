@@ -17,7 +17,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: 'vs2017-win2016'
+      vmImage: 'ubuntu-latest'
     steps:
     - task: DockerCompose@0
       displayName: Build an image
@@ -28,19 +28,11 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Build services'
         includeLatestTag: true
-    - task: VisualStudioTestPlatformInstaller@1
-      displayName: Installing test platform
+    - task: DotNetCoreCLI@2
+      displayName: Testing
       inputs:
-        packageFeedSelector: 'nugetOrg'
-        versionSelector: 'latestPreRelease'
-    - task: VSTest@2
-      inputs:
-        testSelector: 'testAssemblies'
-        testAssemblyVer2: |
-          **\*test*.dll
-          !**\*TestAdapter.dll
-          !**\obj\**
-        searchFolder: '$(System.DefaultWorkingDirectory)'
+        command: test
+        projects: '**/*Test/*.csproj'
     - task: DockerCompose@0
       displayName: Push services
       inputs:
