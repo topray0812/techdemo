@@ -28,6 +28,11 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Build services'
         includeLatestTag: true
+    - task: VisualStudioTestPlatformInstaller@1
+      displayName: Installing test platform
+      inputs:
+        packageFeedSelector: 'nugetOrg'
+        versionSelector: 'latestPreRelease'
     - task: VSTest@2
       inputs:
         testSelector: 'testAssemblies'
