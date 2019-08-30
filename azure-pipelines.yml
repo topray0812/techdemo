@@ -1,4 +1,3 @@
-# Docker
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -20,10 +19,12 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - task: Docker@2
+    - task: DockerCompose@0
       displayName: Build an image
       inputs:
-        command: build
-        dockerfile: '**/Dockerfile'
-        tags: |
-          $(tag)
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: 'Free Trial(56257611-1494-4790-a465-f4ced4782366)'
+        azureContainerRegistry: '{"loginServer":"techdemoacr.azurecr.io", "id" : "/subscriptions/56257611-1494-4790-a465-f4ced4782366/resourceGroups/techdemo/providers/Microsoft.ContainerRegistry/registries/techdemoacr"}'
+        dockerComposeFile: '**/docker-compose.yml'
+        action: 'Build services'
+        includeLatestTag: true
