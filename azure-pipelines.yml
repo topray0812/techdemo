@@ -17,7 +17,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: 'vs2017-win2016'
+      vmImage: 'ubuntu-latest'
     steps:
     - task: DockerCompose@0
       displayName: Build an image
