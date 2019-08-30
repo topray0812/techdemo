@@ -28,6 +28,17 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Build services'
         includeLatestTag: true
+    - task: DockerCompose@0
+      displayName: Run services
+      inputs:
+        action: Run services
+        azureSubscription: 'Free Trial(56257611-1494-4790-a465-f4ced4782366)'
+        azureContainerRegistry: '{"loginServer":"techdemoacr.azurecr.io", "id" : "/subscriptions/56257611-1494-4790-a465-f4ced4782366/resourceGroups/techdemo/providers/Microsoft.ContainerRegistry/registries/techdemoacr"}'
+        projectName: $(Build.Repository.Name)
+        qualifyImageNames: true
+        buildImages: true
+        abortOnContainerExit: true
+        detached: false
     - task: DotNetCoreCLI@2
       displayName: Testing
       inputs:
