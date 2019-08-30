@@ -37,4 +37,4 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         projectName: $(Build.Repository.Name)
         qualifyImageNames: true
-        additionalImageTags: $(Build.BuildId)
+        includeLatestTag: true
