@@ -38,6 +38,7 @@ stages:
         containerName: techdemo.postgres.auth
         ports: 5432
         action: Run a specific service
+        detached: false
     - task: DotNetCoreCLI@2
       displayName: Testing
       inputs:
