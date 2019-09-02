@@ -36,7 +36,6 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         serviceName: techdemo.postgres.auth
         containerName: techdemo.postgres.auth
-        ports: 5432
         action: Run a specific service
         detached: true
     - task: DotNetCoreCLI@2
