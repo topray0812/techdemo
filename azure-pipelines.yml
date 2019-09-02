@@ -32,7 +32,7 @@ stages:
       displayName: Running container
       inputs:
         dockerComposeFile: '**/docker-compose.yml'
-        dockerComposeCommand: 'up --abort-on-container-exit'
+        dockerComposeCommand: 'ps'
         action: Run a Docker Compose command
     - task: DotNetCoreCLI@2
       displayName: Testing
