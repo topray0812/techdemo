@@ -37,6 +37,7 @@ stages:
         serviceName: techdemo.postgres.auth
         containerName: techdemo.postgres.auth
         action: Run a specific service
+        ports: 5433:5432
     - task: DockerCompose@0
       displayName: Show running container
       inputs:
