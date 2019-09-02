@@ -37,7 +37,7 @@ stages:
         serviceName: techdemo.postgres.auth
         containerName: techdemo.postgres.auth
         action: Run a specific service
-        detached: true
+        detached: false
     - task: DotNetCoreCLI@2
       displayName: Testing
       inputs:
