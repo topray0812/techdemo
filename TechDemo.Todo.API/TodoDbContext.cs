@@ -19,8 +19,7 @@ namespace TechDemo.Todo.API
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
-            builder.Entity<TodoItem>().HasData(new TodoItem { Id = 1, Title = "test title", Description = "test desc", Lat = -121.23126, Long = 42.6235675 });
+            //builder.Entity<TodoItem>().HasData(new TodoItem { Id = 1, Title = "test title", Description = "test desc", Lat = -121.23126, Long = 42.6235675 });
 
         }
     }
