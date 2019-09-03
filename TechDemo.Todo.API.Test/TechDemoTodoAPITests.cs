@@ -77,7 +77,7 @@ namespace TechDemo.Todo.API.Test
                 Url = "/api/todo",
                 Body = new
                 {
-                    Id = 4,
+                    Id = 6,
                     Title = "New Title",
                     Description = "New Description",
                     Latitude = -121.23126,
@@ -98,7 +98,7 @@ namespace TechDemo.Todo.API.Test
                 Url = "/api/todo",
                 Body = new
                 {
-                    Id = 4,
+                    Id = 6,
                     Title = "Updated Title",
                     Description = "Updated Description",
                     Latitude = -121.23456,
@@ -116,7 +116,7 @@ namespace TechDemo.Todo.API.Test
         {
             var request = new
             {
-                Url = "/api/todo/4"
+                Url = "/api/todo/6"
             };
 
             var result = await _httpClient.DeleteAsync(request.Url);
