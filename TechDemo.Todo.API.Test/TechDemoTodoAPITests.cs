@@ -77,7 +77,7 @@ namespace TechDemo.Todo.API.Test
                 Url = "/api/todo",
                 Body = new
                 {
-                    Id = 6,
+                    //Id = 6,
                     Title = "New Title",
                     Description = "New Description",
                     Latitude = -121.23126,
@@ -98,7 +98,7 @@ namespace TechDemo.Todo.API.Test
                 Url = "/api/todo",
                 Body = new
                 {
-                    Id = 3,
+                    Id = 1,
                     Title = "Updated Title",
                     Description = "Updated Description",
                     Latitude = -121.23456,
