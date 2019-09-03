@@ -11,6 +11,7 @@ using Xunit;
 
 namespace TechDemo.Todo.API.Test
 {
+    [TestCaseOrderer("TechDemo.Todo.API.Test.TestOrderer", "TechDemo")]
     public class TechDemoAuthAPITests : IDisposable
     {
         private readonly WebAppFactory _webAppFactory;
@@ -44,7 +45,8 @@ namespace TechDemo.Todo.API.Test
         }
 
         [Fact]
-        public async Task GetAllTodoItemsSuccess()
+        //public async Task GetAllTodoItemsSuccess()
+        public async Task Test1()
         {
             var request = new
             {
@@ -57,7 +59,8 @@ namespace TechDemo.Todo.API.Test
         }
 
         [Fact]
-        public async Task GetTodoItemByIdSuccess()
+        //public async Task GetTodoItemByIdSuccess()
+        public async Task Test2()
         {
             var request = new
             {
@@ -70,14 +73,15 @@ namespace TechDemo.Todo.API.Test
         }
 
         [Fact]
-        public async Task CreateTodoItemSuccess()
+        //public async Task CreateTodoItemSuccess()
+        public async Task Test3()
         {
             var request = new
             {
                 Url = "/api/todo",
                 Body = new
                 {
-                    Id = 10,
+                    Id = -1,
                     Title = "New Title",
                     Description = "New Description",
                     Latitude = -121.23126,
@@ -91,7 +95,8 @@ namespace TechDemo.Todo.API.Test
         }
 
         [Fact]
-        public async Task UpdateTodoItemSuccess()
+        //public async Task UpdateTodoItemSuccess()
+        public async Task Test4()
         {
             var request = new
             {
@@ -112,11 +117,12 @@ namespace TechDemo.Todo.API.Test
         }
 
         [Fact]
-        public async Task DeleteTodoItemSuccess()
+        //public async Task DeleteTodoItemSuccess()
+        public async Task Test5()
         {
             var request = new
             {
-                Url = "/api/todo/2"
+                Url = "/api/todo/1"
             };
 
             var result = await _httpClient.DeleteAsync(request.Url);
