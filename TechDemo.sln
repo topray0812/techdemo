@@ -12,9 +12,11 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechDemo.Todo.API", "TechDemo.Todo.API\TechDemo.Todo.API.csproj", "{E0C86E94-05B0-4D43-870A-30B090ACB897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDemo.Auth.API.Test", "TechDemo.Auth.API.Test\TechDemo.Auth.API.Test.csproj", "{8E2CB60F-3AA4-4B07-AD47-CF3CD6A3893A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechDemo.Auth.API.Test", "TechDemo.Auth.API.Test\TechDemo.Auth.API.Test.csproj", "{8E2CB60F-3AA4-4B07-AD47-CF3CD6A3893A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDemo.Todo.API.Test", "TechDemo.Todo.API.Test\TechDemo.Todo.API.Test.csproj", "{E4615DBA-892B-47E6-A20E-57550B676A5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechDemo.Todo.API.Test", "TechDemo.Todo.API.Test\TechDemo.Todo.API.Test.csproj", "{E4615DBA-892B-47E6-A20E-57550B676A5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDemo.Auth.API.UnitTest", "TechDemo.Auth.API.UnitTest\TechDemo.Auth.API.UnitTest.csproj", "{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{E4615DBA-892B-47E6-A20E-57550B676A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4615DBA-892B-47E6-A20E-57550B676A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4615DBA-892B-47E6-A20E-57550B676A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

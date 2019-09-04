@@ -11,7 +11,6 @@ using Xunit;
 
 namespace TechDemo.Todo.API.Test
 {
-    //[TestCaseOrderer("TechDemo.Todo.API.Test.TestOrderer", "TechDemo")]
     public class TechDemoAuthAPITests : IDisposable
     {
         private readonly WebAppFactory _webAppFactory;
