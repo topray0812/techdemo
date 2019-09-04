@@ -58,9 +58,6 @@ stages:
       inputs:
         command: test
         projects: '**/*\.Test/*.csproj'
-    - task: PublishTestResults@2
-      inputs:
-        testResultsFormat: 'xUnit'
     - task: DockerCompose@0
       displayName: Push services
       inputs:
