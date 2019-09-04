@@ -29,22 +29,6 @@ stages:
         action: Build services
         includeLatestTag: true
     - task: DockerCompose@0
-      displayName: Stop running containers
-      inputs:
-        azureSubscription: 'Free Trial(56257611-1494-4790-a465-f4ced4782366)'
-        azureContainerRegistry: '{"loginServer":"techdemoacr.azurecr.io", "id" : "/subscriptions/56257611-1494-4790-a465-f4ced4782366/resourceGroups/techdemo/providers/Microsoft.ContainerRegistry/registries/techdemoacr"}'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: Run a Docker Compose command
-        dockerComposeCommand: stop
-    - task: DockerCompose@0
-      displayName: Remove running containers
-      inputs:
-        azureSubscription: 'Free Trial(56257611-1494-4790-a465-f4ced4782366)'
-        azureContainerRegistry: '{"loginServer":"techdemoacr.azurecr.io", "id" : "/subscriptions/56257611-1494-4790-a465-f4ced4782366/resourceGroups/techdemo/providers/Microsoft.ContainerRegistry/registries/techdemoacr"}'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: Run a Docker Compose command
-        dockerComposeCommand: rm --force
-    - task: DockerCompose@0
       displayName: Running postgreSQL container for AUTH service 
       inputs:
         azureSubscription: 'Free Trial(56257611-1494-4790-a465-f4ced4782366)'
@@ -64,15 +48,6 @@ stages:
         containerName: techdemo.postgres
         action: Run a specific service
         ports: 5432:5432
-    - task: DockerCompose@0
-      displayName: Show running container
-      inputs:
-        azureSubscription: 'Free Trial(56257611-1494-4790-a465-f4ced4782366)'
-        azureContainerRegistry: '{"loginServer":"techdemoacr.azurecr.io", "id" : "/subscriptions/56257611-1494-4790-a465-f4ced4782366/resourceGroups/techdemo/providers/Microsoft.ContainerRegistry/registries/techdemoacr"}'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: Run a Docker Compose command
-        detached: false
-        dockerComposeCommand: ps
     - task: DotNetCoreCLI@2
       displayName: Testing
       inputs:
@@ -81,16 +56,6 @@ stages:
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'xUnit'
-        testResultsFiles: '**/TEST-*.xml'
-    - task: DockerCompose@0
-      displayName: Show running container
-      inputs:
-        azureSubscription: 'Free Trial(56257611-1494-4790-a465-f4ced4782366)'
-        azureContainerRegistry: '{"loginServer":"techdemoacr.azurecr.io", "id" : "/subscriptions/56257611-1494-4790-a465-f4ced4782366/resourceGroups/techdemo/providers/Microsoft.ContainerRegistry/registries/techdemoacr"}'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: Run a Docker Compose command
-        detached: false
-        dockerComposeCommand: ps
     - task: DockerCompose@0
       displayName: Push services
       inputs:
