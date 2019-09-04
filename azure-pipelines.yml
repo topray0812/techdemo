@@ -52,7 +52,7 @@ stages:
       displayName: Testing
       inputs:
         command: test
-        projects: '**/*Test/*.csproj'
+        projects: '**/*\.Test/*.csproj'
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'xUnit'
