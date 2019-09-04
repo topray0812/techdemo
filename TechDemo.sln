@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechDemo.Todo.API.Test", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDemo.Auth.API.UnitTest", "TechDemo.Auth.API.UnitTest\TechDemo.Auth.API.UnitTest.csproj", "{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDemo.Todo.API.UnitTest", "TechDemo.Todo.API.UnitTest\TechDemo.Todo.API.UnitTest.csproj", "{497738C6-747E-4A88-AB2B-8CC78DC4CBD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F66C20CB-8ECA-4917-9C19-BBC15B6235CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497738C6-747E-4A88-AB2B-8CC78DC4CBD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497738C6-747E-4A88-AB2B-8CC78DC4CBD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497738C6-747E-4A88-AB2B-8CC78DC4CBD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497738C6-747E-4A88-AB2B-8CC78DC4CBD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
