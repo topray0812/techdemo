@@ -49,7 +49,12 @@ stages:
         action: Run a specific service
         ports: 5432:5432
     - task: DotNetCoreCLI@2
-      displayName: Testing
+      displayName: Unit Testing
+      inputs:
+        command: test
+        projects: '**/*\.UnitTest/*.csproj'
+    - task: DotNetCoreCLI@2
+      displayName: Integration Testing
       inputs:
         command: test
         projects: '**/*\.Test/*.csproj'
