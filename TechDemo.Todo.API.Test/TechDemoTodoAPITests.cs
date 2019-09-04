@@ -11,7 +11,7 @@ using Xunit;
 
 namespace TechDemo.Todo.API.Test
 {
-    [TestCaseOrderer("TechDemo.Todo.API.Test.TestOrderer", "TechDemo")]
+    //[TestCaseOrderer("TechDemo.Todo.API.Test.TestOrderer", "TechDemo")]
     public class TechDemoAuthAPITests : IDisposable
     {
         private readonly WebAppFactory _webAppFactory;
@@ -45,36 +45,7 @@ namespace TechDemo.Todo.API.Test
         }
 
         [Fact]
-        //public async Task GetAllTodoItemsSuccess()
-        public async Task Test2()
-        {
-            var request = new
-            {
-                Url = "/api/todo"
-            };
-
-            var result = await _httpClient.GetAsync(request.Url);
-
-            result.StatusCode.Should().Be(HttpStatusCode.OK);
-        }
-
-        [Fact]
-        //public async Task GetTodoItemByIdSuccess()
-        public async Task Test3()
-        {
-            var request = new
-            {
-                Url = "/api/todo/1"
-            };
-
-            var result = await _httpClient.GetAsync(request.Url);
-
-            result.StatusCode.Should().Be(HttpStatusCode.OK);
-        }
-
-        [Fact]
-        //public async Task CreateTodoItemSuccess()
-        public async Task Test1()
+        public async Task CreateTodoItemSuccess()
         {
             var request = new
             {
@@ -95,8 +66,33 @@ namespace TechDemo.Todo.API.Test
         }
 
         [Fact]
-        //public async Task UpdateTodoItemSuccess()
-        public async Task Test4()
+        public async Task GetAllTodoItemsSuccess()
+        {
+            var request = new
+            {
+                Url = "/api/todo"
+            };
+
+            var result = await _httpClient.GetAsync(request.Url);
+
+            result.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public async Task GetTodoItemByIdSuccess()
+        {
+            var request = new
+            {
+                Url = "/api/todo/1"
+            };
+
+            var result = await _httpClient.GetAsync(request.Url);
+
+            result.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+        
+        [Fact]
+        public async Task UpdateTodoItemSuccess()
         {
             var request = new
             {
@@ -117,8 +113,7 @@ namespace TechDemo.Todo.API.Test
         }
 
         [Fact]
-        //public async Task DeleteTodoItemSuccess()
-        public async Task Test5()
+        public async Task DeleteTodoItemSuccess()
         {
             var request = new
             {
