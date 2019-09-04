@@ -16,6 +16,8 @@ namespace TechDemo.Auth.API.UnitTest
                             
             var dbContext = new AuthDbContext(options);
 
+            dbContext.Database.Migrate();
+
             return dbContext;
         }
     }
