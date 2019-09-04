@@ -46,7 +46,7 @@ namespace TechDemo.Todo.API.Test
 
         [Fact]
         //public async Task GetAllTodoItemsSuccess()
-        public async Task Test2_GetAllTodoItemsSuccess()
+        public async Task Test1()
         {
             var request = new
             {
@@ -60,7 +60,7 @@ namespace TechDemo.Todo.API.Test
 
         [Fact]
         //public async Task GetTodoItemByIdSuccess()
-        public async Task Test3_GetTodoItemByIdSuccess()
+        public async Task Test2()
         {
             var request = new
             {
@@ -74,7 +74,7 @@ namespace TechDemo.Todo.API.Test
 
         [Fact]
         //public async Task CreateTodoItemSuccess()
-        public async Task Test1_CreateTodoItemSuccess()
+        public async Task Test3()
         {
             var request = new
             {
@@ -96,7 +96,7 @@ namespace TechDemo.Todo.API.Test
 
         [Fact]
         //public async Task UpdateTodoItemSuccess()
-        public async Task Test4_UpdateTodoItemSuccess()
+        public async Task Test4()
         {
             var request = new
             {
@@ -118,7 +118,7 @@ namespace TechDemo.Todo.API.Test
 
         [Fact]
         //public async Task DeleteTodoItemSuccess()
-        public async Task Test5_DeleteTodoItemSuccess()
+        public async Task Test5()
         {
             var request = new
             {
