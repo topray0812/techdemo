@@ -46,7 +46,7 @@ namespace TechDemo.Todo.API.Test
 
         [Fact]
         //public async Task GetAllTodoItemsSuccess()
-        public async Task Test1()
+        public async Task Test2()
         {
             var request = new
             {
@@ -60,7 +60,7 @@ namespace TechDemo.Todo.API.Test
 
         [Fact]
         //public async Task GetTodoItemByIdSuccess()
-        public async Task Test2()
+        public async Task Test3()
         {
             var request = new
             {
@@ -74,7 +74,7 @@ namespace TechDemo.Todo.API.Test
 
         [Fact]
         //public async Task CreateTodoItemSuccess()
-        public async Task Test3()
+        public async Task Test1()
         {
             var request = new
             {
